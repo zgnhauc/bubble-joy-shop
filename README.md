@@ -1,73 +1,64 @@
-# Welcome to your Lovable project
+# BubbleJoy Shop: A Pop Art / Jester Aesthetic Study
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/2b64aae5-7cb1-4294-9963-ecb4a762004c
+This project implements a web storefront for "BubbleJoy Shop" as a case study in applying **Pop Art principles, framed with a Jester aesthetic,** to contemporary front-end design. The core objective was to interpret the bold color, dynamic symmetry, and youthful energy of Pop Art while maintaining modern accessibility and responsiveness standards.
 
-## How can I edit this code?
+**Final Live URL:** [https://bubble-joy-shop.lovable.app/](https://bubble-joy-shop.lovable.app/)
+**GitHub Repository:** https://github.com/zgnhauc/bubble-joy-shop
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Process Documentation (Daily Checklist Summary)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2b64aae5-7cb1-4294-9963-ecb4a762004c) and start prompting.
+### I. Design Style & Research
+* **Chosen Style:** Pop Art (Jester Aesthetic)
+* **Style Interpretation:** The design relies on a striking pink/magenta color palette, oversized elements, and a sense of controlled chaos in the layout to reject sterile corporate conventions.
+* **Artifacts:** The required `/research/` folder contains 10 references, predominantly focused on mid-century commercial Pop Art (Warhol, Lichtenstein) and modern maximalist designs.
 
-Changes made via Lovable will be committed automatically to this repo.
+### II. Build Sprints & Technical Decisions
 
-**Use your preferred IDE**
+| Sprint | Focus | Key Technical Decisions |
+| :--- | :--- | :--- |
+| **Sprint 1: Foundation** | Layout, Typography, Color Palette | Established the dominance of the **pink palette** and a primary bold display font. Used CSS Grid to introduce the playful, slightly asynchronous layout characteristic of Pop Art. |
+| **Sprint 2: Components** | Navigation, Menu Cards, Buttons | Focused on component differentiation through high contrast. Buttons received thick borders and exaggerated hover states to prevent the UI from settling into a "strong business form" look. |
+| **Sprint 3: Polish** | Responsiveness, Content Completion, QA | Implemented device-specific adjustments to maintain visual impact on mobile/tablet. Integrated the AI-generated context pages (`Timeline`, `Profiles`, `About`). |
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Final Quality Assurance & Performance
 
-Follow these steps:
+The site passed the final quality assessment with perfect scores in Accessibility, Best Practices, and SEO.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+| Lighthouse Category | Score | Result |
+| :--- | :--- | :--- |
+| **Performance** | 90 | Meets minimum standard. |
+| **Accessibility** | 100 | Excellent |
+| **Best Practices** | 100 | Excellent |
+| **SEO** | 100 | Excellent |
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Collaboration Story: The Human Element in AI-Driven Design
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+The collaboration between human intent and generative AI presented a consistent challenge in defining the project's unique aesthetic. The AI, defaulting to efficiency and perceived best practices, repeatedly attempted to create a strong, generic "business form" with overly-safe fonts and clean, symmetrical layouts.
 
-**Edit a file directly in GitHub**
+The primary iterative effort was spent **fighting this corporate conformity** to push the design toward the **Jester Pop Art** vision. Specifically:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1.  **Typography:** The AI struggled to integrate the required *expressive* feel. Achieving the final look required repeated manual overrides to introduce the necessary playful, bold scaling and deliberate visual imbalance, rejecting the safe, symmetrical alignment suggested by the tool.
+2.  **Color Saturation:** The dominant pink palette was often muted by the AI for "readability." The designer had to re-saturate and apply high-contrast magenta and yellow highlights to maintain the intense, consumer-driven visual experience central to Pop Art.
 
-**Use GitHub Codespaces**
+This process underscored that AI is a powerful tool for *efficiency*, but **human iteration and aesthetic judgment remain non-negotiable** for defining and delivering a strong, unique, and style-driven project outcome.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## Time Tracker Log (For Submission)
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2b64aae5-7cb1-4294-9963-ecb4a762004c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+| Date | Phase | Hours | Notes |
+| :--- | :--- | :--- | :--- |
+| **Tues** | Phase 1 (Research) | 1.5 | Style established as Pop Art (Jester Aesthetic). References collected. Initial HTML mockup generated via AI. |
+| **Tues** | Phase 2 (Context) | 1.0 | AI-generated content for Timeline, Profiles, and About pages drafted and integrated. Content edited for stylistic accuracy. |
+| **Wed** | Phase 3 (Planning) | 0.5 | Three sprints defined: Foundation, Components, Polish. Success criteria established (grid accuracy, component reuse). |
+| **Wed** | Phase 4 (Build) | 5.5 | Development sprints executed. Iteration on components and design language occurred 3x minimum per sprint, primarily focused on aesthetic differentiation. |
+| **Wed** | Phase 5 (Reflection) | 1.5 | Final QA completed (Lighthouse 90+). Collaboration Story drafted and finalized. Project deployed and submitted. |
+| **Total** | | **10.0** | |
