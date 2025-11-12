@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import ProductCard, { Product } from "@/components/ProductCard";
 import { useToast } from "@/hooks/use-toast";
@@ -59,13 +60,13 @@ const Home = () => {
   const { toast } = useToast();
   const { addToCart } = useCart();
 
-  const handleAddToCart = (product: Product) => {
+  const handleAddToCart = useCallback((product: Product) => {
     addToCart(product);
     toast({
       title: "Added to cart! 🎉",
       description: `${product.name} has been added to your cart.`,
     });
-  };
+  }, [addToCart, toast]);
 
   return (
     <div className="min-h-screen">
@@ -77,6 +78,8 @@ const Home = () => {
           src={heroImage}
           alt="Colorful boba tea drinks"
           className="absolute inset-0 h-full w-full object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 gradient-hero opacity-80" />
         <div className="relative container mx-auto h-full flex flex-col items-center justify-center text-center px-4">

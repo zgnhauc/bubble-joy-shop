@@ -159,6 +159,7 @@ All colors MUST be HSL.
   
   .animate-float {
     animation: float 3s ease-in-out infinite;
+    will-change: transform;
   }
   
   @keyframes float {
@@ -172,6 +173,7 @@ All colors MUST be HSL.
   
   .animate-bubble {
     animation: bubble 4s ease-in-out infinite;
+    will-change: transform;
   }
   
   @keyframes bubble {
