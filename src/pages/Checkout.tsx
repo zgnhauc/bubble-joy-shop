@@ -8,21 +8,12 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Minus, Plus, Trash2, ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
-interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string;
-}
+import { useCart } from "@/contexts/CartContext";
 
 const Checkout = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    // Mock data - in real app this would come from context/state management
-  ]);
+  const { cartItems, updateQuantity, removeFromCart, clearCart } = useCart();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -31,20 +22,8 @@ const Checkout = () => {
     address: "",
   });
 
-  const updateQuantity = (id: string, delta: number) => {
-    setCartItems(
-      cartItems
-        .map((item) =>
-          item.id === id
-            ? { ...item, quantity: Math.max(0, item.quantity + delta) }
-            : item
-        )
-        .filter((item) => item.quantity > 0)
-    );
-  };
-
-  const removeItem = (id: string) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
+  const handleRemoveItem = (id: string) => {
+    removeFromCart(id);
     toast({
       title: "Item removed",
       description: "Item has been removed from your cart.",
@@ -64,12 +43,13 @@ const Checkout = () => {
       title: "Order placed! 🎉",
       description: "Thank you for your order! We'll prepare it right away.",
     });
+    clearCart();
     setTimeout(() => navigate("/"), 2000);
   };
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar cartItemCount={cartItems.length} />
+      <Navbar />
 
       <div className="container mx-auto px-4 py-8">
         <Button
@@ -148,7 +128,7 @@ const Checkout = () => {
                           <Button
                             size="icon"
                             variant="ghost"
-                            onClick={() => removeItem(item.id)}
+                            onClick={() => handleRemoveItem(item.id)}
                             className="h-8 w-8 text-destructive hover:text-destructive"
                           >
                             <Trash2 className="h-4 w-4" />

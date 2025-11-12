@@ -2,13 +2,11 @@ import { ShoppingCart, User } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import { useCart } from "@/contexts/CartContext";
 
-interface NavbarProps {
-  cartItemCount?: number;
-}
-
-const Navbar = ({ cartItemCount = 0 }: NavbarProps) => {
+const Navbar = () => {
   const navigate = useNavigate();
+  const { cartItemCount } = useCart();
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-card/80 backdrop-blur-lg">

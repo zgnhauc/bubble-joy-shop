@@ -1,7 +1,7 @@
-import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import ProductCard, { Product } from "@/components/ProductCard";
 import { useToast } from "@/hooks/use-toast";
+import { useCart } from "@/contexts/CartContext";
 import heroImage from "@/assets/hero-boba.jpg";
 import jasmineImage from "@/assets/boba-jasmine.jpg";
 import strawberryImage from "@/assets/boba-strawberry.jpg";
@@ -56,11 +56,11 @@ const products: Product[] = [
 ];
 
 const Home = () => {
-  const [cart, setCart] = useState<Product[]>([]);
   const { toast } = useToast();
+  const { addToCart } = useCart();
 
   const handleAddToCart = (product: Product) => {
-    setCart([...cart, product]);
+    addToCart(product);
     toast({
       title: "Added to cart! 🎉",
       description: `${product.name} has been added to your cart.`,
@@ -69,7 +69,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar cartItemCount={cart.length} />
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative h-[500px] overflow-hidden">
